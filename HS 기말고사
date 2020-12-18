@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body {
+        background:#D7F1F2;
+        padding: 2rem;
+        }
+    h2 {
+        font-family: 'Arial';
+        color: black;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 3rem;
+        line-height: 0.75;
+        }
+    span {
+        display: block;
+        }
+    span:not(.light) {
+        opacity: 0;
+        animation: flashText .5s ease-out alternate infinite;
+        }
+    span.light {
+        position: relative;
+        display: inline-block;
+        }
+    @keyframes flash{
+        to {
+            opacity: 1;
+            }
+        }
+    @keyframes flashText {
+        to {
+            opacity: 0.15;
+            }
+        }
+
+       html,body{
+            padding:0px; margin:0px;
+            
+        }
+            .hscene { 
+                perspective: 400px;
+            }
+
+            .hcube {
+                position: relative;                
+                transform-style: preserve-3d;
+                transform: translateZ(-100px);
+                animation: xyspin 10s infinite;  
+        }
+            
+
+            .face1 {
+                border:1px solid black;
+                position: absolute;
+                width: 200px;
+                height: 200px;       
+            }
+
+            .front {
+                transform: rotateY(0) translateZ(100px);
+            }
+            
+            .right {
+                transform: rotateY(90deg) translateZ(100px);
+            }
+
+            .back {
+                transform: rotateY(180deg) translateZ(100px);
+            }
+
+            .left {
+                transform: rotateY(-90deg) translateZ(100px);
+            }
+
+            .top {
+                transform: rotateX(90deg) translateZ(100px);
+            }
+
+            .bottom {
+                transform: rotateX(-90deg) translateZ(100px);
+            }
+        .scene {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #CCC;
+           
+            perspective: 400px;
+           
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(-50px);
+            transition: transform 1s;
+        }
+
+        .box:hover {
+          animation: spin 10s infinite;   
+        }
+        .face {
+            position: absolute;
+            border: 1px solid black;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            backface-visibility: visible;
+            background-image:url('photo.jpeg');
+            background-repeat:no-repeat;
+        }
+
+        .face_front,
+        .face_back {
+            width: 300px;
+            height: 200px;
+            line-height: 200px;
+        }
+
+        .face_right,
+        .face_left {
+            width: 100px;
+            height: 200px;
+            left: 100px;
+            line-height: 200px;
+        }
+
+        .face_top,
+        .face_bottom {
+            width: 300px;
+            height: 100px;
+            top: 50px;
+            line-height: 100px;
+        }
+
+        .hcontainer{
+            text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+        }
+        .hcontainer2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;      
+            }
+        .himage{
+            border-radius:50%;
+            width:100px;
+            height:100px;
+        }
+        .himage2{
+            border-radius:50%;
+            width:100px;
+            height:100px;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        .hBottomright{
+            position: absolute; right: 0px; bottom: 0px;
+        }
+
+        .face_front  { 
+            transform: rotateY(  0deg) translateZ( 50px);
+        }
+        .face_back  { 
+            transform: rotateY(180deg) translateZ( 50px);
+        }
+        .face_right   {  
+            transform: rotateY( 90deg) translateZ(150px);
+        }
+        .face_left   {   
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        .face_top    {   
+            transform: rotateX( 90deg) translateZ(100px);
+        }
+        .face_bottom {  
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        @keyframes spin {
+            0% { transform: translateZ(0px) rotateX(  0deg) rotateY(  0deg); }
+            100% { transform: translateZ(0px) rotateX(0deg) rotateY(360deg); }
+        }   
+        @keyframes xyspin {
+            0% { transform: translateZ(0px) rotateX(  0deg) rotateY(  0deg); }
+            100% { transform: translateZ(0px) rotateX(360deg) rotateY(360deg); }
+        }   
+        @media all and (min-width:900px){
+        }
+     
+        
+    </style>
+</head>
+<body>
+<!-- 반응효과 -->
+    <h2>
+        <span>2020 기초 웹 개발론</span>  
+        <span>-</span> 
+        <span class="light">박혜성의 이력서</span> 
+    </h2>
+<!-- 이메일 및 정보 -->
+    <div class='hcontainer'>
+        <div class='main'>
+            <img src='/images/hy.jpg' class='himage'>
+            <div class='name'>HyeSung</div>
+            <a class='email' href="email.html">park.hy@kakaocorp.com</a>
+            <a class='number' href='number'>010-57@9-43@@</a>
+        </div>
+        <div>
+<!-- 이력시작 -->
+        <table border="1">
+            <caption>-이력-</caption>
+            <tr>
+                <td>학력</td>
+                <td>물리학전공</td>
+                <td>컴퓨터공학전공</td>
+            </tr>
+            <tr >
+                <td >경력</td>
+                <td>입자가속 시뮬레이션 학생 선임 연구원</td>
+                <td>빅데이터 처리와 자연어처리 기업애로해결</td>
+            </tr>
+            <tr >
+                <td >대외 활동</td>
+                <td>Niagara College 어학연수</td>
+                <td>총 학생회</td>
+            </tr>
+        </table>
+        <ul>
+            <caption>-사용 언어-</caption>
+            <li>python</li>
+            <li>c</li>
+            <li>html</li>
+            <li>css</li>
+        </ul>
+        <dl>
+            <dt>
+                <caption>-참여 프로젝트-</caption>
+                <dd>진공에서 dc, 고주파 전압을 사용하여 플라스마 연구</dd>
+                <dd>-kek연구소- 물질의 상태 및 새로운 입자에 관한 프로젝트 참여(힉스입자/플라즈마)</dd>
+                <dd>인공지능 프로젝트 및 가상환경 입자가속기, 4차원 물리 시뮬레이션 프로젝트 참여</dd>
+                <caption>_____________</caption>
+            </dt>
+     </dl>
+    </div>
+<!-- 사진 및 키워드 -->
+</div>
+    <div class="hcontainer2">
+        <div class="hscene">
+            <div class="hcube ">
+                <div class="face1 front">물리학</div>
+                <div class="face1 back">컴퓨터공학</div>
+                <div class="face1 right">시뮬레이션</div>
+                <div class="face1 left">양자역학</div>
+                <div class="face1 top">연구원</div>
+                <div class="face1 bottom">인공지능</div>
+            </div>
+        </div>
+    </div>
+    <div class="scene">
+        <div class="box show-front">
+            <img src='/images/1.jpg' class="face face_front">
+            <img src='/images/2.jpg' class="face face_back">
+            <img src='/images/3.jpg' class="face face_right">
+            <img src='/images/4.jpg' class="face face_left">
+            <div class="face face_top">himage</div>
+            <div class="face face_bottom">himage</div>
+        </div>
+    </div>
+</div>
+<!-- 우측하단 이미지 -->
+<div class="hBottomright">
+    <img src='/images/hh.png' class='himage'>
+</div>
+</body>
+</html>
